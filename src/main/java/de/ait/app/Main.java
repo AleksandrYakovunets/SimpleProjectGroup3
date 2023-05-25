@@ -36,14 +36,15 @@ public class Main {
                     for (String name : names) {
                         System.out.println(name);
                     }
-
                     break;
                 case 2:
                     System.out.println("Выводим самого взрослого пользователя");
                     String lastName = usersService.getLastNameOfMostAging();
                     System.out.println(lastName);
-
                     break;
+                case 3:
+                    System.out.println("Сохраняем нового пользователя");
+                    usersRepository.saveNewUser();
                 case 0:
                     System.out.println("Выход");
                     System.exit(0);
