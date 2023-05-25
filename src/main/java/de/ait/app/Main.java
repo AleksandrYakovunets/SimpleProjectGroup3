@@ -5,6 +5,7 @@ import de.ait.repositories.UsersRepositoryTextFileImpl;
 import de.ait.services.UsersService;
 import de.ait.services.UsersServiceImpl;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,6 +46,22 @@ public class Main {
                 case 3:
                     System.out.println("Сохраняем нового пользователя");
                     usersRepository.saveNewUser();
+                    break;
+                case 4:
+                    System.out.println("Выводим средний возраст пользователей");
+                    double averageAge = usersService.getAverageAgeOfUsers();
+                    System.out.println(averageAge);
+                    break;
+                case 5:
+                    System.out.println("Выводим возраст самого высокого человека");
+                    int agePerson = usersService.ageOfTallestPerson();
+                    System.out.println(agePerson);
+                    break;
+                case 6:
+                    System.out.println("Выводим имя и фамилию самого низкого человека");
+                    String firstNameAndLastName = usersService.firstNameAndLastNameOfTheLowestPerson();
+                    System.out.println(firstNameAndLastName);
+                    break;
                 case 0:
                     System.out.println("Выход");
                     System.exit(0);
